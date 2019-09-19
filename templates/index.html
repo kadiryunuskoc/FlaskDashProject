@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+
+
+{% block body %}
+<div class="jumbotron text-center">
+    <h3>Hoş Geldiniz...</h3>
+    <p>Bu Sayfada Datasetinizi Upload Edebilirsiniz</p>
+    <p>Öncelikle Giriş Yapmalısınız</p>
+</div>
+
+{% if session["logged_in"] %}
+<div class="container text-center">
+        <a type="button" class="btn btn-warning btn-lg" href="/Upload">DataUpload</button></a>
+</div>
+
+
+        {% else %}
+
+        {% endif %}
+
+
+
+{% endblock %}

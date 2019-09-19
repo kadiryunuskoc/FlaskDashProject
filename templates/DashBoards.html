@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+
+
+{% block body %}
+
+{% if session["logged_in"] %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart" id="bargraph">
+                <script>
+                    var graphs = {{plot | safe}};
+                    Plotly.plot('bargraph',graphs,{});
+                </script>
+            </div>
+        </div>
+    </div>
+
+        {% else %}
+        <div class="row">
+            <div class="col-md-6">
+        <p>Dataseti görebilmek için giriş yapmalısınız</p>
+            </div>
+        </div>
+        {% endif %}
+
+
+
+{% endblock %}
